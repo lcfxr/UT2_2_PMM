@@ -15,7 +15,7 @@ class FormularioActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario)
         // PASO B: recuperar la marca antes de mostrarla.
-        // Por ahora, no restauramos revisado.
+        revisado = savedInstanceState ?.getBoolean("revisado", false) ?: false //Si vengo de girar, recupero lo que guarde, si no, empiezo en false
         val campoTitulo = findViewById<EditText>(R.id.campoTitulo)
         val campoAutor = findViewById<EditText>(R.id.campoAutor)
         // C2.1: localizar aquí el campo nuevo.
@@ -62,5 +62,9 @@ class FormularioActivity : Activity() {
     }
 
     // PASO C: guardar la marca. Este método va fuera de onCreate.
-    // Añadiremos aquí onSaveInstanceState en UT2.2.
+    // Antes de destruir la pantalla (al girar), guarda la marca en el Bundle.
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putBoolean("revisado", revisado)
+        super.onSaveInstanceState(outState)
+    }
 }
