@@ -1,0 +1,22 @@
+UT22_Base · PMDM · IES Polígono Sur
+Almudena Marchena Gómez
+
+1. Descomprime el paquete. Android Studio > Open > selecciona ESTA carpeta,
+   la que contiene settings.gradle.kts y app. No abras la carpeta superior.
+2. Espera Sync. La primera vez necesita Internet y descarga dependencias.
+3. Usa Android SDK 35 / Build Tools 35.0.0 y Gradle JDK 17 o 21.
+   Versiones: AGP 8.9.2, Gradle 8.11.1, Kotlin 2.1.20.
+   compileSdk 35, targetSdk 34, minSdk 24. Proyecto didáctico Views/XML.
+4. Device Manager: arranca un teléfono virtual API 35. Selecciónalo y pulsa Run.
+5. Debes ver dos libros iniciales y Añadir libro.
+
+UT22_Base contiene una pérdida INTENCIONADA de la marca de revisión al girar.
+Los campos tienen id y conservan su texto mediante el estado estándar Android.
+Los libros guardados se conservan mediante AlmacenLibros, ya preparado.
+La marca de revisión no es requisito para guardar un libro.
+En C2.1 el campo adicional se valida; no se exige almacenarlo ni mostrarlo en detalle.
+Cada variante se instala como una app distinta para no mezclar datos.
+No cambies Gradle para resolver una descarga fallida: consulta el mensaje.
+Para reiniciar los libros de una variante, desinstala esa app (borra sus datos).
+
+Gradle Wrapper oficial v8.11.1: ver LICENSE-Gradle.txt.
